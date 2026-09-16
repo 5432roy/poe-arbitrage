@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  --background: #0c0b09;
+  --surface: #15130f;
+  --surface-muted: #1d1a15;
+  --foreground: #ece6d9;
+  --foreground-muted: #a39886;
+  --border: #322c24;
+  --primary: #d7b45a;
+  --primary-hover: #e6c56e;
+  --primary-foreground: #1c1608;
+  --secondary: #2a261f;
+  --secondary-foreground: #ece6d9;
+  --success: #8fad6d;
+  --warning: #d49a4a;
+  --error: #c96b5a;
+  --info: #7a93ae;
+  --ring: #d7b45a;
+
+  --page-max-width: 72rem;
+  --page-padding-inline: 1.5rem;
+  --section-space-block: 4.5rem;
+  --header-height: 4rem;
+
+  --token-radius-sm: 0.25rem;
+  --token-radius-md: 0.5rem;
+  --token-radius-lg: 0.75rem;
+  --token-radius-full: 9999px;
+
+  --token-duration-fast: 150ms;
+  --token-duration-normal: 300ms;
+  --token-duration-slow: 500ms;
+  --token-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --page-padding-inline: 2rem;
+    --section-space-block: 6rem;
+  }
+}
+
+/*
+  Dark is the only implemented theme. Remap these semantic tokens on
+  [data-theme="light"] when a light palette ships — components already
+  read roles, not raw hex values.
+*/
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+
+  --radius-sm: var(--token-radius-sm);
+  --radius-md: var(--token-radius-md);
+  --radius-lg: var(--token-radius-lg);
+  --radius-full: var(--token-radius-full);
+
+  --spacing-header: var(--header-height);
+  --spacing-section: var(--section-space-block);
+  --spacing-page: var(--page-padding-inline);
+
+  --duration-fast: var(--token-duration-fast);
+  --duration-normal: var(--token-duration-normal);
+  --duration-slow: var(--token-duration-slow);
+  --ease-standard: var(--token-ease-standard);
+
+  --z-index-header: 40;
+}
+
+@utility page-wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--page-max-width);
+  padding-inline: var(--page-padding-inline);
+}
+
+@utility section-space {
+  padding-block: var(--section-space-block);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 35%, transparent);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
