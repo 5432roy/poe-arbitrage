@@ -1,0 +1,8 @@
+.env
+.env.*
+supabase/
+currency-exchange.json
+temp.py
+design.md
+Frontend Design and Engineering Conventions.md
+docs/
