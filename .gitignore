@@ -32,6 +32,10 @@ yarn-error.log*
 # Documentation
 /docs
 
+# Supabase
+/supabase/migrations
+/supabase/*.md
+
 # vercel
 .vercel
 
