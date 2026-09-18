@@ -20,6 +20,9 @@ export function SiteHeader() {
           aria-label="Primary"
           className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:gap-6"
         >
+          <CtaLink href="/market" variant="nav">
+            Market
+          </CtaLink>
           <CtaLink href="/opportunities" variant="nav">
             Opportunities
           </CtaLink>
