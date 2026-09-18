@@ -7,10 +7,10 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
 function isAuthorized(request: Request) {
-  const secret = process.env.POE_CRON_SECRET;
+  const secret = process.env.CRON_SECRET;
 
   if (!secret) {
-    console.error("POE_CRON_SECRET is not configured");
+    console.error("CRON_SECRET is not configured");
     return false;
   }
 
