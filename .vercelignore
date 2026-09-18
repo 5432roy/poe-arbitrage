@@ -1,6 +1,6 @@
 .env
 .env.*
-supabase/
+/supabase/
 currency-exchange.json
 temp.py
 design.md
